@@ -63,8 +63,11 @@ int main(int argc, char *argv[])
 	strcpy(req.name, "dmar-scaler-dmaw");
 	req.count = 3;
 	req.array[0] = NXS_FUNCTION_DMAR;
-	req.array[1] = NXS_FUNCTION_SCALER_4096;
-	req.array[2] = NXS_FUNCTION_DMAW;
+	req.array[1] = NXS_FUNCTION_ANY;
+	req.array[2] = NXS_FUNCTION_SCALER_4096;
+	req.array[3] = NXS_FUNCTION_ANY;
+	req.array[4] = NXS_FUNCTION_DMAW;
+	req.array[5] = NXS_FUNCTION_ANY;
 
 	ret = nxs_res_manager_request(fd, &req);
 	if (ret) {
